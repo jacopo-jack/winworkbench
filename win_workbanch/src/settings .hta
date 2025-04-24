@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenShells</title>
+    <HTA:APPLICATION 
+        APPLICATIONNAME="OpenShells"
+        BORDER="thin"
+        BORDERSTYLE="normal"
+        CAPTION="yes"
+        SHOWINTASKBAR="yes"
+        SINGLEINSTANCE="yes"
+        SCROLL="no"
+    />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px 5px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="openSettings()">Apri Impostazioni</button>
+    <button onclick="openControl()">Apri Pannello di Controllo</button>
+
+    <script type="text/vbscript">
+        ' Apri Impostazioni
+        Sub openSettings()
+            CreateObject("WScript.Shell").Run "ms-settings:", 1, False
+        End Sub
+
+        ' Apri Pannello di Controllo
+        Sub openControl()
+            Dim objShell
+            Set objShell = CreateObject("WScript.Shell")
+            objShell.Run "control", 1, False
+            Set objShell = Nothing
+        End Sub
+    </script>
+</body>
+</html>

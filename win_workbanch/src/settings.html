@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <HTA:APPLICATION 
+    APPLICATIONNAME="OpenShells"
+    BORDER="thin"
+    BORDERSTYLE="normal"
+    CAPTION="yes"
+    SHOWINTASKBAR="yes"
+    SINGLEINSTANCE="yes"
+    SCROLL="no"
+/>
+<HTA:APPLICATION 
+        APPLICATIONNAME="OpenWindowsTools"
+        BORDER="thin"
+        BORDERSTYLE="normal"
+        CAPTION="yes"
+        SHOWINTASKBAR="yes"
+        SINGLEINSTANCE="yes"
+        SCROLL="no"
+    />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px 0;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="openSettings()">Apri Impostazioni</button>
+    <button onclick="openControl()">Apri Impostazioni</button>
+    <script type="text/vbscript">
+
+        Sub openSettings()
+            CreateObject("WScript.Shell").Run "ms-settings:", 1, False
+        End Sub
+            CreateObject("WScript.Shell")
+            objShell.Run "C:\Windows\System32\control.exe", 1, False 'Per aprire Pannello di Controllo
+        Sub openControl( )
+    </script>
+</body>
+</html>
